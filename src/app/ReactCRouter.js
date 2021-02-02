@@ -4,10 +4,10 @@ import { shallowEqual, useSelector } from "react-redux";
 import BasePage from "./BasePage";
 import { AuthPage } from "./modules/Auth";
 
-export function Routes() {
+export function ReactCRouter(props) {
 	const { isAuthorized } = useSelector(
 		({ auth }) => ({
-			isAuthorized: auth.user != null,
+			isAuthorized: auth.user != null || props.authenticationModule,
 		}),
 		shallowEqual
 	);
